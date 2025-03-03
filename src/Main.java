@@ -1,13 +1,14 @@
-//import jaco.mp3.player.MP3Player;
+import jaco.mp3.player.MP3Player;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.io.File;
 
 public class Main {
 
-    final static String SONG = "------Song's path------";
-    //static MP3Player mp3player = new MP3Player(new File(SONG));
+    final static String SONG = "src/music.mp3";
+    static MP3Player mp3player = new MP3Player(new File(SONG));
 
     public static void main(String[] args) {
         boolean gameContinues = true;
@@ -26,7 +27,7 @@ public class Main {
                 musicChoice, musicChoice[0]);
 
         if (musicChoiceCheck == 0) {
-            //mp3player.play();
+            mp3player.play();
         }
 
         do {
@@ -240,9 +241,9 @@ public class Main {
                 }
             }
 
-            /*if (musicChoiceCheck == 0) {
+            if (musicChoiceCheck == 0) {
                 mp3player.stop();
-            }*/
+            }
 
             resultText = "Bet = " + player.bet + "\n<html><h1>!!! " + durum + " !!!</h1></html>\nYour Money = $" + player.playerMoney;
             gamePanel[0] = dealer.dealerText;
