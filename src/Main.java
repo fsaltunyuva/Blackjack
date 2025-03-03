@@ -4,11 +4,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.io.File;
+import java.net.URISyntaxException;
 
 public class Main {
+    static File jarDir;
 
-    final static String SONG = "src/music.mp3";
-    static MP3Player mp3player = new MP3Player(new File(SONG));
+    static {
+        try {
+            jarDir = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    static File songFile = new File(jarDir, "music/music.mp3");
+    static MP3Player mp3player = new MP3Player(songFile);
 
     public static void main(String[] args) {
         boolean gameContinues = true;
