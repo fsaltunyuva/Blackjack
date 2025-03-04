@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class User {
-    static ArrayList<Integer> takenCards = new ArrayList<>();
+    static ArrayList<Integer> takenCards = new ArrayList<Integer>();
 
     public static int hitACard() {
 
